@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Code-Mixing Translator</title>
+     <style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family:verdana;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  height: 50%;
+}
+
+
+</style>
+</head>
+<body style="background-color:hsla(0, 100%, 50%, 0.1);">
+<ul>
+  <li><a class="active" href="/">Home</a></li>
+  <li><a href="/image">Image To Translation</a></li>
+  <li><a href="/file">File To Translation</a></li>
+  <li><a href="/audio">Audio To Translation</a></li>
+  <li><a href="/text">Text To Translation</a></li>
+</ul>
+ {% if msg %}
+ <h1 style="font-family:Amasis MT Pro;font-size: 60px;text-decoration: none;text-align: center;color:#ff0000;"> {{ msg }} </h1>
+ {% endif %}
+ <br>
+{% if extracted %}
+ <h1 style="font-family:Amasis MT Pro;font-size: 35px;text-decoration: none;text-align: center;color:#3c3c3c;"> Results: </h1>
+ {% endif %}
+ <div class="img" style="float:center">
+{% if img_src %}
+ <img src="{{ url_for('send_uploaded_file', filename=img_src) }}">
+ {% endif %}
+ </div>
+<br>
+ <br>
+ <div class="a">
+{% if extracted1 %}
+ <h2 style="font-family:Amasis MT Pro;font-size: 35px;text-decoration: none;text-align: center;color:#3c3c3c;">TELUGU TRANSLATION</h2>
+ <p style="font-family:Amasis MT Pro;font-size: 28px;text-decoration: none;text-align: center;"> {{ extracted1 }} </p>
+ {% endif %}
+ </div>
+ <br>
+<br>
+<div class="b">
+{% if extracted %}
+ <h2 style="font-family:Amasis MT Pro;font-size: 35px;text-decoration: none;text-align: center;color:#3c3c3c;">HINDI TRANSLATION</h2>
+ <p style="font-family:Amasis MT Pro;font-size: 28px;text-decoration: none;text-align: center;"> {{ extracted }} </p>
+ {% endif %}
+ </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CODE-MIXING TRANSLATION</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}" />
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family:verdana;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+</style>
+</head>
+<body style="background-color:hsla(0, 100%, 50%, 0.1);text-align: center;">
+<ul>
+  <li><a class="active" href="/">Home</a></li>
+  <li><a href="/image">Image To Translation</a></li>
+  <li><a href="/file">File To Translation</a></li>
+  <li><a href="/audio">Audio To Translation</a></li>
+  <li><a href="/text">Text To Translation</a></li>
+</ul>
+<div id="speechContainer">
+    <h1 style="font-family:Amasis MT Pro;font-size: 40px;text-decoration: none;text-align: center;color:#3c3c3c;">Upload New File</h1><br>
+    <br><form style="text-align: center;" method="post" enctype="multipart/form-data">
+        <input style="font-family:Amasis MT Pro;font-size: 18px;text-decoration: none;" type="file" name="file"/>
+        <br>
+        <br>
+        <input style="font-family:Amasis MT Pro;font-size: 18px;text-decoration: none;" type="submit" id="submitButton" value="Translate"/>
+    </form>
+    <br>
+    <br>
+    {% if transcript1 != "" %}
+            <h1 style="font-family:Amasis MT Pro;font-size: 35px;text-decoration: none;text-align: center;color:#3c3c3c;">TRANSLATION</h1>
+            <p style="font-family:Amasis MT Pro;font-size: 28px;text-decoration: none;text-align: center;">{{ transcript1 }}</p>
+        </div>
+    {% endif %}
+<br>
+<br>
+    {% if transcript != "" %}
+        <div id="speechTranscriptContainer">
+            <h1 style="font-family:Amasis MT Pro;font-size: 35px;text-decoration: none;text-align: center;color:#3c3c3c;">HINDI TRANSLATION</h1>
+            <p id="speechText" style="font-family:Amasis MT Pro;font-size: 28px;text-decoration: none;text-align: center;">{{ transcript }}</p>
+        </div>
+    {% endif %}
+</body>
+</html>

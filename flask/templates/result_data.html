@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+    <style>
+        ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  font-family:verdana;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+    </style>
+</head>
+   <body style="background-color:hsla(0, 100%, 50%, 0.1);text-align: center;">
+      <ul>
+  <li><a class="active" href="/">Home</a></li>
+  <li><a href="/image">Image To Translation</a></li>
+  <li><a href="/file">File To Translation</a></li>
+  <li><a href="/audio">Audio To Translation</a></li>
+  <li><a href="/text">Text To Translation</a></li>
+</ul>
+      <h1 style="font-family:Amasis MT Pro;font-size: 60px;text-decoration: none;text-align: center;color:#ff0000;">CODE-MIXING TRANSLATOR</h1><br>
+      <h1 style="font-family:Amasis MT Pro;font-size: 35px;text-decoration: none;text-align: center;color:#3c3c3c;"><strong>TRANSLATION</strong></h1>
+      <p style="font-family:Amasis MT Pro;font-size: 28px;text-decoration: none;text-align: center;">{{ result1 }}</p>
+      <br>
+      <h1 style="font-family:Amasis MT Pro;font-size: 35px;text-decoration: none;text-align: center;color:#3c3c3c;"><strong>HINDI TRANSLATION</strong></h1>
+      <p style="font-family:Amasis MT Pro;font-size: 28px;text-decoration: none;text-align: center;">{{ result }}</p>
+   </body>
+</html>
